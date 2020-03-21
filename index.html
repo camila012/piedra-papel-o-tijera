@@ -1,0 +1,99 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="./juego.css"> 
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <title>Juego</title>
+</head>
+
+<body
+background="./Img/89-894359_making-a-slick-mobileapp-website-with-jquery-css.jpg"
+
+>
+
+<div class="container">
+  <div class="row"> 
+    
+    <div class="col-md-4"> 
+      <div class=" card text-center" >
+        <div class="card-header">
+          <div class="card">
+            <img src="./Img/tijera.png" class="card-img-top">
+          </div>
+        </div>
+        <div class="card-body"style="background-color:#000;">
+          <div class="card-body" >
+            <div class="d-flex justify-content-center">
+              <div style="width: 100%;" class="btn btn-danger" onclick="seleccionarOpcion('tijeras')">Tijeras</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="col-md-4"> 
+      <div class=" card text-center">
+        <div class="card-header">
+          <div class="card">
+            <img src="./Img/piedra.jpeg" class="card-img-top" >
+          </div>
+        </div>
+        <div class="card-body"style="background-color:#000;">
+          <div class="card-body" >
+            <div class="d-flex justify-content-center">
+              <div style="width: 100%;" class="btn btn-info" onclick="seleccionarOpcion('piedra')">Piedra</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+              
+    
+    <div class="col-md-4"> 
+      <div class=" card text-center">
+        <div class="card-header">
+          <div class="card">
+            <img src="./Img/papel.jpg" class="card-img-top" >
+          </div>
+        </div>
+        <div class="card-body"style="background-color:#000;">
+          <div class="card-body" >
+            <div class="d-flex justify-content-center">
+              <div style="width: 100%;" class="btn btn-dark" onclick="seleccionarOpcion('papel')">Papel</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+
+    <div class="col-md-12"> 
+      <div class="card text-center card my-5 text-white " style="width:100%; background-color:rgba(000,000,000,0.5);" >
+        <div class="card-header">
+          <h3 id="resultado"></h3>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">
+            <h4 id="opcionSeleccionada"></h4>
+          </h5>
+          <p class="card-text">
+            <h4 id="respuestaDelContrincante"></h4>
+          </p>
+        </div>
+      </div>
+  </div>
+</div>
+  <script type="text/javascript" src="./juego.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
