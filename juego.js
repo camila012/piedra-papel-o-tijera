@@ -8,47 +8,84 @@ function seleccionarOpcion(opcionSeleccionada) {
 
   // Logica
 if(opcionSeleccionada === respuestaDelContrincante) {
-  resultados('Empate')
+  empate('Empate')
 } else {
   if(opcionSeleccionada === 'tijeras') {
     if (respuestaDelContrincante === 'papel')
     {
-      resultados('¡Ganaste!')
+      ga('¡Ganaste!')
     }
     if (respuestaDelContrincante === 'piedra') {
-      resultados('PERDISTE')
+      perdiste('PERDISTE')
     }
   }
   if(opcionSeleccionada === 'papel') {
     if(respuestaDelContrincante === 'tijeras') {
-      resultados('PERDISTE')
+      perdiste('PERDISTE')
     }
      if(respuestaDelContrincante === 'piedra') {
-      resultados('¡Ganaste!')
+      ganaste('¡Ganaste!')
      }
   }
 
   if(opcionSeleccionada === 'piedra') {
     if(respuestaDelContrincante === 'tijera') {
-      resultados('¡Ganaste!')
+      ganaste('¡Ganaste!')
     }
     if(respuestaDelContrincante === 'papel') {
-      resultados('PERDISTE')
+      perdiste('PERDISTE')
     }
   }
 }
 
 // id que seleccione 
-document.getElementById('opcionSeleccionada').innerText = `Seleccionada= ${opcionSeleccionada}`
+document.getElementById('opcionSeleccionada').innerText = `${opcionSeleccionada}`
 
 // id consola
-document.getElementById('respuestaDelContrincante').innerText =`Contrincante= ${respuestaDelContrincante}`
+document.getElementById('respuestaDelContrincante').innerText =`${respuestaDelContrincante}`
 
 // resultado
 
-function resultados (resultado){
+function empate (resultado){
 
-  document.getElementById('resultado').innerText=`${resultado}`
+  Swal.fire({
+    icon: 'info',
+    title:resultado,
+    showConfirmButton: false,
+    timer: 1500
+   
+  })
+  
+  
+    
+}
+
+function perdiste (resultado){
+
+  Swal.fire({
+    icon: 'error',
+    title:resultado ,
+    showConfirmButton: false,
+    timer: 1500
+   
+  })
+  
+  
+    
+}
+
+function ganaste (resultado){
+
+  Swal.fire({
+    icon: 'success',
+    title:resultado,
+    showConfirmButton: false,
+    timer: 1500
+   
+  })
+  
+  
+    
 }
 
 }
