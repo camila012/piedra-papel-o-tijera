@@ -8,32 +8,32 @@ function seleccionarOpcion(opcionSeleccionada) {
 
   // Logica
 if(opcionSeleccionada === respuestaDelContrincante) {
-  empate('Empate')
+  mostrarResultado('Empate')
 } else {
   if(opcionSeleccionada === 'tijeras') {
     if (respuestaDelContrincante === 'papel')
     {
-      ga('¡Ganaste!')
+      mostrarResultado('¡Ganaste!')
     }
     if (respuestaDelContrincante === 'piedra') {
-      perdiste('PERDISTE')
+      mostrarResultado('PERDISTE')
     }
   }
   if(opcionSeleccionada === 'papel') {
     if(respuestaDelContrincante === 'tijeras') {
-      perdiste('PERDISTE')
+      mostrarResultado('PERDISTE')
     }
      if(respuestaDelContrincante === 'piedra') {
-      ganaste('¡Ganaste!')
+      mostrarResultado('¡Ganaste!')
      }
   }
 
   if(opcionSeleccionada === 'piedra') {
     if(respuestaDelContrincante === 'tijera') {
-      ganaste('¡Ganaste!')
+      mostrarResultado('¡Ganaste!')
     }
     if(respuestaDelContrincante === 'papel') {
-      perdiste('PERDISTE')
+      mostrarResultado('PERDISTE')
     }
   }
 }
@@ -46,47 +46,29 @@ document.getElementById('respuestaDelContrincante').innerText =`${respuestaDelCo
 
 // resultado
 
-function empate (resultado){
-
+function mostrarResultado(resultado) {
+  
   Swal.fire({
-    icon: 'info',
-    title:resultado,
-    showConfirmButton: false,
-    timer: 1500
-   
+    title: resultado,
+    width: 600,
+    padding: '3em',
+    background: '#fff url(https://sweetalert2.github.io/images/trees.png)',
+    backdrop: `
+      rgba(0,0,123,0.4)
+      url("https://sweetalert2.github.io/images/nyan-cat.gif")
+      left top
+      no-repeat
+      `
+  
+     
   })
-  
-  
-    
-}
-
-function perdiste (resultado){
-
-  Swal.fire({
-    icon: 'error',
-    title:resultado ,
-    showConfirmButton: false,
-    timer: 1500
-   
-  })
-  
-  
-    
-}
-
-function ganaste (resultado){
-
-  Swal.fire({
-    icon: 'success',
-    title:resultado,
-    showConfirmButton: false,
-    timer: 1500
-   
-  })
-  
-  
-    
-}
 
 }
+ 
+
+
+}
+
+
+
 
